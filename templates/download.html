@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}
+    download
+{% endblock %}
+{% block bd1 %}
+    <div class="card container " style="width: 24rem; text-align: center">
+        <div class="card-body">
+            {% if user.username %}
+                <h5 class="card-title">Hello {{ user.username }}</h5>
+                <a class="btn btn-primary"
+                   href="https://doc-0c-64-docs.googleusercontent.com/docs/securesc/htpsgfc8735sdukuejqiucdiq37uang1/24unk5rn61nbo7rtl78pd3n81o31lhdl/1608121200000/08316396061470387046/15972430878156514605/0B6hb_M2qyZxLZTM0ZjY0YTItN2Q5ZS00MTVjLTliNmUtYmRjMTRjNzJlMjFj?e=download&authuser=0&nonce=h9cq7dt0bc010&user=15972430878156514605&hash=nq7am16si733fp7vd618n3kah479r34j"
+                   role="button">Click here to download</a>
+            {% else %}
+                <h5 class="card-title">Hello Guest</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Require Login to download</h6>
+                <p class="card-text">You need login to download. If you don't have not an account, please creat a new
+                    account?</p>
+                <a href="{% url 'login' %}" class="card-link">Login</a>
+                <a href="{% url 'register' %}" class="card-link">Register</a>
+            {% endif %}
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% block title %}
+    home
+{% endblock %}
+{% block bd1 %}
+    <div class="row">
+        <div class="col-sm-2 mt-2">
+            <div class="list-group position-fixed" >
+                <a href="#intruc" class="list-group-item active">
+                    Background
+                </a>
+                <a href="#datacolection" class="list-group-item">Data Collection </a>
+
+                <a href="#details" class="list-group-item">Dataset Details </a>
+
+                <a href="#applications" class="list-group-item">Applications of the Dataset </a>
+
+
+            </div>
+
+        </div>
+        <div class="col-sm-8 mt-2 ps-3" style="text-indent: 30px">
+            <div style="text-align: center">
+                <h1 class="text-uppercase mt-5">    {% block nametable %}
+                    dataset rehabhand
+                {% endblock %}
+                </h1>
+            </div>
+            <p id="intruc"><strong> 1.Background </strong></p>
+            <div style="text-align:justify">
+
+                <p style="text-indent:30px">
+                    Rehabilitation is measures to restore the body’s functions reduced or lost due to injury,
+                    accident, stroke, cerebral palsy. Rehabilitation practices of patients needs the guidance and
+                    supervision of medical staff. Currently, tools for supporting doctors to monitore rehabilitation
+                    practices of
+                    patients are very limited in clinical settings, mainly they use the naked eye to observe. The
+                    automatic analysis
+                    and recognization of activities from data collected by the sensors worn by patients during exercise
+                    can
+                    assist doctors to quantify the patient’s recovery progress and have appropriate treatment regimen.
+                    In this
+                    paper, we introduce a dataset collected from wearable sensors (first-person camera, accelerometer)
+                    that
+                    were worn
+                    by 10 rehabilitation patients through their hand exercises. Collecting took place at Rehabilitation
+                    practice
+                    room in the Hanoi Medical University Hospital by participants with different injuries, resulting in
+                    highly
+                    diverse rehabilited status. Our dataset features 55 hours of video consisting of 11.5M frames, which
+                    we
+                    labelled for a total of 5000 image with hand and object in rehabilitation practices segments.
+                    Segmenting
+                    hand and object in these images have challenges due to obscurity and have a difference as this is
+                    the dataset
+                    collected on the patient. We implement several baseline models for hand and held objects
+                    segmentation
+                    and tracking. We evaluted these models on the test set and the our results can be benchmarks to
+                    compare
+                    between works that use our dataset.
+                </p>
+            </div>
+
+            <p id="datacolection"><strong> 2. Data Collection </strong></p>
+
+            <div style="text-align:justify">
+
+                <p>
+                    The data is collected using endoscopic equipment at Vestre Viken Health Trust (VV) in Norway.
+                    The VV consists of 4 hospitals and provides health care to 470.000 people.
+                    One of these hospitals (the Bærum Hospital) has a large gastroenterology department
+                    from where training data have been collected and will be provided, making the dataset larger
+                    in the future. Furthermore, the images are carefully annotated by one or more medical experts
+                    from VV and the Cancer Registry of Norway (CRN). The CRN provides new knowledge about cancer
+                    through research on cancer. It is part of South-Eastern Norway Regional Health Authority and
+                    is organized as an independent institution under Oslo University Hospital Trust.
+                    CRN is responsible for the national cancer screening programmes with the goal to prevent
+                    cancer death by discovering cancers or pre-cancerous lesions as early as possible
+                </p>
+            </div>
+            <p id="details"><strong> 3. Dataset Details</strong></p>
+            <p style="text-align: justify">
+                The Rehabhand dataset consists of images, annotated and verified by medical doctors
+                (experienced endoscopists), including several classes showing anatomical landmarks,
+                phatological findings or endoscopic procedures in the GI tract, i.e., hundreds of images
+                for each class. The number of images is sufficient to be used for different tasks, e.g.,
+                image retrieval, machine learning, deep learning and transfer learning, etc.
+                The anatomical landmarks include Z-line, pylorus, cecum, etc., while the pathological finding includes
+                esophagitis, polyps, ulcerative colitis, etc. In addition, we provide several set of images related to
+                removal of lesions, e.g., "dyed and lifted polyp", the "dyed resection margins", etc. The dataset
+                consist of the images with different resolution from 720x576 up to 1920x1072 pixels and organized in a
+                way where they are sorted in separate folders named accordingly to the content. Some of the included
+                classes of images have a green picture in picture illustrating the position and configuration of the
+                endoscope inside the bowel, by use of an electromagnetic imaging system (ScopeGuide, Olympus Europe)
+                that may support the interpretation of the image. This type of information may be important for later
+                investigations (thus included),
+                but must be handled with care for the detection of the endoscopic findings.
+            </p>
+            <p id="applications"><strong> 4. Applications of dataset</strong></p>
+            <p style="text-align: justify">
+                Our vision is that the available data may eventually help researchers to
+                develop systems that improve the health-care system in the context of disease detection in
+                videos of the GI tract. Such a system may automate video analysis and endoscopic
+                findings detection in the esophagus, stomach, bowel and rectum. Important results will
+                include higher detection accuracies, reduced manual labor for medical personnel, reduced average cost,
+                less patient discomfort and possibly increased willingness to undertake the examination.
+                In the end, the improved screening will probably significantly reduce mortality and number
+                of luminal GI disease incidents. With respect to direct use in the multimedia research areas,
+                the main application area of Kvasir is automatic detection, classification and localization of
+                endoscopic pathological findings in an image captured in the GI tract. Thus,
+                the provided dataset can be used in several scenarios where the aim is to develop and
+                evaluate algoritmic analysis of images. Using the same collection of data, researchers
+                can easier compare approaches and experimental results, and results can easier be reproduced.
+                In particular, in the area of image retrieval and object detection, Kvasir will play an important
+                initial role where the image collection can be divided into training and test sets for developments of
+                and experiments for various image retrieval and object localization methods including search-based
+                systems, neural-networks, video analysis, information retrieval, machine learning, object detection,
+                deep learning, computer vision, data fusion and big data processing.
+            </p>
+        </div>
+        <div class="col-sm-2 mt-2" style="">
+            <div class="text-center" style="color: #ffc107">
+                <h3> Note</h3>
+            </div>
+            <p>
+                Due to funding and staffing issues, we are no longer able to accept comment and suggestions.
+                We get numerous questions regarding topics that are addressed on our FAQ page.
+                If you have a problem or question regarding something you downloaded from the "Related projects" page,
+                you must contact the developer directly.
+                Please note that any changes made to the database are not reflected until a new version of WordNet is
+                publicly released.
+                Due to limited staffing, there are currently no plans for future ReHabHand releases.
+            </p>
+
+        </div>
+    </div>
+{% endblock %}
